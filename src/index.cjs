@@ -1,3 +1,5 @@
+const https = require("https");
+
 function main() {
   const username = process.argv[2];
 
@@ -5,6 +7,32 @@ function main() {
     console.log("Please provide github username to view activity");
     return;
   }
+
+  const GITHUB_ACTIVITY_URL = `https://api.github.com/users/${username}/events`;
+  const req = https.get(
+    GITHUB_ACTIVITY_URL,
+    { headers: { "User-Agent": "node.js" } },
+    (res) => {
+      let bufferData = "";
+
+      res.on("data", (chunk) => {
+        bufferData += chunk;
+      });
+
+      res.on("end", () => {
+        try {
+          const parsedData = JSON.parse(bufferData);
+          console.log(parsedData);
+        } catch (error) {
+          console.error("Error parsing json data: ", error.message);
+        }
+      });
+    },
+  );
+
+  req.on("error", (err) =>
+    console.error("Error fetching github activity", err.message),
+  );
 }
 
 // Run main application
