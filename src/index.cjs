@@ -24,7 +24,6 @@ function main() {
         let parsedData = null;
         try {
           parsedData = JSON.parse(bufferData);
-          //   console.log(parsedData);
         } catch (error) {
           console.error("Error parsing json data: ", error.message);
         }
