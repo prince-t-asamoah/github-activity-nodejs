@@ -1,0 +1,24 @@
+{
+  "name": "github-activity-nodejs",
+  "version": "1.0.0",
+  "description": "A simple Node.js command line interface (CLI) to fetch the recent activity of a GitHub user and display it in the terminal.",
+  "main": "./src/index.cjs",
+  "type": "commonjs",
+  "bin": {
+    "github-activity": "bin/github-activity.cjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prince-t-asamoah/github-activity-nodejs.git"
+  },
+  "keywords": ["CLI", "Node.js", "Github"],
+  "author": "Prince Asamoah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prince-t-asamoah/github-activity-nodejs/issues"
+  },
+  "homepage": "https://github.com/prince-t-asamoah/github-activity-nodejs#readme"
+}
