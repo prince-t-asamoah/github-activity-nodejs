@@ -1,3 +1,4 @@
+const { GITHUB_EVENTS } = require("./constants.cjs");
 /**
  * GIthub event user
  *
@@ -59,15 +60,15 @@ const printGitHubActivity = (data) => {
 
     // Handle each event type
     switch (event.type) {
-      case "CreateEvent":
+      case GITHUB_EVENTS.create:
         console.log(
           `- Created a new ${event.public ? "public" : "private"} repo '${eventRepoName}' on ${eventDate}`,
         );
         break;
-      case "PushEvent":
+      case GITHUB_EVENTS.push:
         console.log(`- Pushed to repo '${eventRepoName}' on ${eventDate}`);
         break;
-      case "WatchEvent":
+      case GITHUB_EVENTS.watch:
         console.log(
           `- '${event.org.login}' launched a release on ${eventDate}`,
         );
