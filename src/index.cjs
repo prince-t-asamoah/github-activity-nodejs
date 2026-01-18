@@ -1,5 +1,5 @@
 const https = require("https");
-const printGitHubActivity = require("./print-event.cjs");
+const printGitHubActivity = require("./print-activity.cjs");
 
 function main() {
   const username = process.argv[2];
