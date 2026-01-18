@@ -57,7 +57,7 @@ const printGitHubActivity = (data) => {
   // For each event type, print event activity
   data.forEach((event) => {
     const eventDate = new Date(event.created_at).toUTCString();
-    const eventRepoName = event.repo.name.split("/")[1];
+    const eventRepoName = event.repo.name;
 
     // Handle each event type
     switch (event.type) {
@@ -76,7 +76,7 @@ const printGitHubActivity = (data) => {
         break;
       case GITHUB_EVENTS.member:
         console.log(
-          `- Added as a collaborator to repo '${event.repo.name}' on ${eventDate}`,
+          `- Added as a collaborator to repo '${eventRepoName}' on ${eventDate}`,
         );
         break;
       default:
