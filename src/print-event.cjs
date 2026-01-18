@@ -51,7 +51,7 @@
  *
  * @param {Array<GithubEvent>} data
  */
-const printGitHubEvents = (data) => {
+const printGitHubActivity = (data) => {
   // For each event type, print event activity
   data.forEach((event) => {
     const eventDate = new Date(event.created_at).toUTCString();
@@ -78,4 +78,4 @@ const printGitHubEvents = (data) => {
   });
 };
 
-module.exports = printGitHubEvents;
+module.exports = printGitHubActivity;

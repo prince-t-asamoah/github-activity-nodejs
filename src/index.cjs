@@ -1,5 +1,5 @@
 const https = require("https");
-const printGitHubEvents = require("./print-event.cjs");
+const printGitHubActivity = require("./print-event.cjs");
 
 function main() {
   const username = process.argv[2];
@@ -27,7 +27,7 @@ function main() {
         } catch (error) {
           console.error("Error parsing json data: ", error.message);
         }
-        printGitHubEvents(parsedData);
+        printGitHubActivity(parsedData);
       });
     },
   );
