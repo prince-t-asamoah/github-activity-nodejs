@@ -73,6 +73,11 @@ const printGitHubActivity = (data) => {
           `- '${event.org.login}' launched a release on ${eventDate}`,
         );
         break;
+      case GITHUB_EVENTS.member:
+        console.log(
+          `- Added as a collaborator to repo '${event.repo.name}' on ${eventDate}`,
+        );
+        break;
       default:
         console.log(event);
     }
