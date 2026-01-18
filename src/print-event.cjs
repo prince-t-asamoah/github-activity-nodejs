@@ -51,6 +51,7 @@ const { GITHUB_EVENTS } = require("./constants.cjs");
  * Parse Github events api data and print events to console
  *
  * @param {Array<GithubEvent>} data
+ * @returns {void}
  */
 const printGitHubActivity = (data) => {
   // For each event type, print event activity
